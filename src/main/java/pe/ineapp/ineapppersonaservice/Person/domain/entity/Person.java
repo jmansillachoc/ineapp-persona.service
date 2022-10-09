@@ -1,4 +1,4 @@
-package pe.ineapp.ineapppersonaservice.Person;
+package pe.ineapp.ineapppersonaservice.Person.domain.entity;
 
 import lombok.*;
 
@@ -10,17 +10,20 @@ import java.time.LocalDate;
 @AllArgsConstructor //Creame el constructor con todos los argumentos.
 @NoArgsConstructor //crea un constructor vacio con los argumentos declarados.
 */
-@Builder //BUSCAR MAS INFORMACION SOBRE BUILDER - Esto
-@Data
+ //BUSCAR MAS INFORMACION SOBRE BUILDER - Esto
+
 @Entity(name="Person")
 @Table(
         name="tbl_person",
         uniqueConstraints = {
-                @UniqueConstraint(name="person_email.unique", columnNames = "email"),
-                @UniqueConstraint(name="person_dni.unique", columnNames = "dni"),
+                @UniqueConstraint(name="person_email_unique", columnNames = "email"),
+                @UniqueConstraint(name="person_dni_unique", columnNames = "dni"),
         }
 )
-
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 
     @SequenceGenerator(

@@ -28,9 +28,9 @@ public class BasicResponse {
                 .message(message).build();
     }
 
-    public  static BasicResponse whenNoDataFound(){
+    public  static BasicResponse whenNoDataFound(String resource){
         return BasicResponse.builder()
                 .code(404)
-                .message("No data found").build();
+                .message("No" + resource +"found").build();
     }
 }

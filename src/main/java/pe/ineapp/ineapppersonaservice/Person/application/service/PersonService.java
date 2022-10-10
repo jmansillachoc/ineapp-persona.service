@@ -11,4 +11,10 @@ public interface PersonService {
     BasicResponse addUser(UserRequest request);
 
     public UserResponse getAll();
+
+    public UserResponse getByDni(String dni);
+
+    public BasicResponse updateUser(UserRequest request, String dni);
+
+    public BasicResponse deleteUser(String dni);
 }
